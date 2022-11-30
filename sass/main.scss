@@ -28,18 +28,37 @@ $theme-colors: (
 @import '../node_modules/bootstrap/scss/bootstrap';
 
 body {
-    background-color: white;
+	margin: 0;
+	display: grid;
+	background-color: #6c757d;
+	grid-template-columns: 15% 85% ;
+	grid-template-areas: "nav aside"
+	"nav main";
 }
 
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 30px;
-    background-color: white;
+header {
+	padding: 10px;
 }
 
-// .s200 {
-// 	height: 200px;
-// 	width: 200px;
+nav {
+	align-items: center;
+}
+
+// .search {
+// 	display: grid;
+// 	grid-template-areas: ;
 // }
+
+.column {
+	padding: 5px;
+	width: 75%;
+	display: grid;
+	align-items: flex-start;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+	margin: 5px;
+	text-align: center;
+}
+

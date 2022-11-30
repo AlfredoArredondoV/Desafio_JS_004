@@ -8,12 +8,27 @@
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-    
-
-
-
-
-
+    <header>
+        <div>Cantidad de Cuartos</div>
+        <div><input type="number" id="inputRoom"></div>
+        <div>Metros Cuadrados</div>
+        <div class="row">
+            <div class="col">Desde</div>
+            <div class="col">Hasta</div>
+        </div>
+        <div class="row">
+            <div class="col"><input type="number" id="inputMin" size="7"></div>
+            <div class="col"><input type="number" id="inputMax" size="7"></div>
+        </div>
+        <div><button id="inputButton">Buscar</button></div>
+    </header>
+    <div>
+        <nav>
+            <div>Total :<span id="total"></span></div>
+        </nav>
+        <main class="column" id="cards">
+        </main>
+    </div>
     <script src="assets/js/app.js"></script>
 </body>
 </html>
