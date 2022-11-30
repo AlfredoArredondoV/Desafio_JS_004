@@ -74,7 +74,7 @@ document.getElementById("inputButton").addEventListener("click", () => {
     } else {
         document.getElementById("cards").innerHTML = "";
         arregloPropiedades.forEach((property) => {
-            if ( property.cuartos >= cantidadCuarto && property.metros >= metroCuadradoMin && property.metros <= metroCuadradoMax) {
+            if ( property.cuartos = cantidadCuarto && property.metros >= metroCuadradoMin && property.metros <= metroCuadradoMax) {
                 console.log("ok");
                 document.getElementById("cards").innerHTML += createCards( property.nombre, property.descripcion, property.src, property.cuartos, property.metros );
             }
