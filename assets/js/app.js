@@ -65,6 +65,7 @@ document.getElementById("inputButton").addEventListener("click", () => {
     let cantidadCuarto = document.getElementById("inputRoom").value;
     let metroCuadradoMin = document.getElementById("inputMin").value;
     let metroCuadradoMax = document.getElementById("inputMax").value;
+    let num = 0;
     if (
         cantidadCuarto.length == 0 ||
         metroCuadradoMin.length == 0 ||
@@ -74,10 +75,11 @@ document.getElementById("inputButton").addEventListener("click", () => {
     } else {
         document.getElementById("cards").innerHTML = "";
         arregloPropiedades.forEach((property) => {
-            if ( property.cuartos = cantidadCuarto && property.metros >= metroCuadradoMin && property.metros <= metroCuadradoMax) {
-                console.log("ok");
+            if ( property.cuartos == cantidadCuarto && property.metros >= metroCuadradoMin && property.metros <= metroCuadradoMax) {
+                num++;
                 document.getElementById("cards").innerHTML += createCards( property.nombre, property.descripcion, property.src, property.cuartos, property.metros );
             }
         });
+        document.getElementById("total").textContent = num;
     }
 });
