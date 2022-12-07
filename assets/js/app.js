@@ -43,7 +43,6 @@ const arregloPropiedades = [
     },
     
 ];
-let contador = 0;
 //funcion que crea tarjeta
 const createCards = (nombre, description, img, rooms, metros) => {
     return `
@@ -57,6 +56,7 @@ const createCards = (nombre, description, img, rooms, metros) => {
         </div>
     </div>`;
 };
+let contador = 0;
 // recorrer arrays con forEach
 arregloPropiedades.forEach((property) => {
     document.getElementById("cards").innerHTML += createCards( property.nombre, property.descripcion, property.src, property.cuartos, property.metros );
