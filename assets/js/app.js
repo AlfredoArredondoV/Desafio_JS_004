@@ -43,6 +43,7 @@ const arregloPropiedades = [
     },
     
 ];
+let contador = 0;
 //funcion que crea tarjeta
 const createCards = (nombre, description, img, rooms, metros) => {
     return `
@@ -59,7 +60,9 @@ const createCards = (nombre, description, img, rooms, metros) => {
 // recorrer arrays con forEach
 arregloPropiedades.forEach((property) => {
     document.getElementById("cards").innerHTML += createCards( property.nombre, property.descripcion, property.src, property.cuartos, property.metros );
+    contador++;
 });
+document.getElementById("total").textContent = contador;
 // buscador
 document.getElementById("inputButton").addEventListener("click", () => {
     let cantidadCuarto = document.getElementById("inputRoom").value;
@@ -72,13 +75,18 @@ document.getElementById("inputButton").addEventListener("click", () => {
         metroCuadradoMax.length == 0
     ) {
         alert("Faltan campos por llenar");
+    } else if (
+        cantidadCuarto <= 0 ||
+        metroCuadradoMin <= 0 ||
+        metroCuadradoMax <= 0
+    ) {
+        alert("Valores deben ser mayores de 0");
     } else {
         document.getElementById("cards").innerHTML = "";
-        arregloPropiedades.forEach((property) => {
-            if ( property.cuartos == cantidadCuarto && property.metros >= metroCuadradoMin && property.metros <= metroCuadradoMax) {
+        let filtrar = arregloPropiedades.filter(propiedad => propiedad.cuartos == cantidadCuarto && propiedad.metros >= metroCuadradoMin && propiedad.metros <= metroCuadradoMax )
+        filtrar.forEach((property) => {
                 num++;
                 document.getElementById("cards").innerHTML += createCards( property.nombre, property.descripcion, property.src, property.cuartos, property.metros );
-            }
         });
         document.getElementById("total").textContent = num;
     }
